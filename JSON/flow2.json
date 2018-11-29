@@ -1,0 +1,701 @@
+{
+  "declaration": {
+    "attributes": {
+      "version": "1.0",
+      "encoding": "UTF-8"
+    }
+  },
+  "elements": [
+    {
+      "type": "element",
+      "name": "bpmn2:definitions",
+      "attributes": {
+        "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "xmlns:bpmn2": "http://www.omg.org/spec/BPMN/20100524/MODEL",
+        "xmlns:bpmndi": "http://www.omg.org/spec/BPMN/20100524/DI",
+        "xmlns:dc": "http://www.omg.org/spec/DD/20100524/DC",
+        "xmlns:di": "http://www.omg.org/spec/DD/20100524/DI",
+        "xmlns:magic": "http://magic",
+        "id": "sample-diagram",
+        "targetNamespace": "http://bpmn.io/schema/bpmn",
+        "xsi:schemaLocation": "http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+      },
+      "elements": [
+        {
+          "type": "element",
+          "name": "bpmn2:process",
+          "attributes": {
+            "id": "Process_1"
+          },
+          "elements": [
+            {
+              "type": "element",
+              "name": "bpmn2:startEvent",
+              "attributes": {
+                "id": "StartEvent_1",
+                "magic:spell": "WOOO ZAAAA"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "bpmn2:outgoing",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_1pt0rzs"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:task",
+              "attributes": {
+                "id": "Task_1gyc8n3",
+                "name": "Create a meeting schedule"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "bpmn2:incoming",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_1pt0rzs"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmn2:outgoing",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_01h2v08"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:sequenceFlow",
+              "attributes": {
+                "id": "SequenceFlow_1pt0rzs",
+                "sourceRef": "StartEvent_1",
+                "targetRef": "Task_1gyc8n3"
+              }
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:task",
+              "attributes": {
+                "id": "Task_0zz8pid",
+                "name": "Invite Member"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "bpmn2:incoming",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_01h2v08"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmn2:incoming",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_0ge9jdu"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmn2:outgoing",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_00s5egd"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:sequenceFlow",
+              "attributes": {
+                "id": "SequenceFlow_01h2v08",
+                "sourceRef": "Task_1gyc8n3",
+                "targetRef": "Task_0zz8pid"
+              }
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:exclusiveGateway",
+              "attributes": {
+                "id": "ExclusiveGateway_1y1ohkm"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "bpmn2:incoming",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_00s5egd"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmn2:outgoing",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_0kkqa4e"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmn2:outgoing",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_0ge9jdu"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:sequenceFlow",
+              "attributes": {
+                "id": "SequenceFlow_00s5egd",
+                "sourceRef": "Task_0zz8pid",
+                "targetRef": "ExclusiveGateway_1y1ohkm"
+              }
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:task",
+              "attributes": {
+                "id": "Task_0wqz650",
+                "name": "Vote for a meeting date"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "bpmn2:incoming",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_0kkqa4e"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmn2:outgoing",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_1yvlg9n"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:sequenceFlow",
+              "attributes": {
+                "id": "SequenceFlow_0kkqa4e",
+                "name": "Done",
+                "sourceRef": "ExclusiveGateway_1y1ohkm",
+                "targetRef": "Task_0wqz650",
+                "testProps": "eiei"
+              }
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:sequenceFlow",
+              "attributes": {
+                "id": "SequenceFlow_0ge9jdu",
+                "name": "Keep adding member",
+                "sourceRef": "ExclusiveGateway_1y1ohkm",
+                "targetRef": "Task_0zz8pid",
+                "testProps": "eiei"
+              }
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:task",
+              "attributes": {
+                "id": "Task_1ohv9xq",
+                "name": "Set the meeting date for every one"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "bpmn2:incoming",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_1yvlg9n"
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmn2:outgoing",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_0osvvxp"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:endEvent",
+              "attributes": {
+                "id": "EndEvent_0ez0jja"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "bpmn2:incoming",
+                  "elements": [
+                    {
+                      "type": "text",
+                      "text": "SequenceFlow_0osvvxp"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:sequenceFlow",
+              "attributes": {
+                "id": "SequenceFlow_1yvlg9n",
+                "sourceRef": "Task_0wqz650",
+                "targetRef": "Task_1ohv9xq"
+              }
+            },
+            {
+              "type": "element",
+              "name": "bpmn2:sequenceFlow",
+              "attributes": {
+                "id": "SequenceFlow_0osvvxp",
+                "sourceRef": "Task_1ohv9xq",
+                "targetRef": "EndEvent_0ez0jja"
+              }
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "bpmndi:BPMNDiagram",
+          "attributes": {
+            "id": "BPMNDiagram_1"
+          },
+          "elements": [
+            {
+              "type": "element",
+              "name": "bpmndi:BPMNPlane",
+              "attributes": {
+                "id": "BPMNPlane_1",
+                "bpmnElement": "Process_1"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNShape",
+                  "attributes": {
+                    "id": "_BPMNShape_StartEvent_2",
+                    "bpmnElement": "StartEvent_1"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "dc:Bounds",
+                      "attributes": {
+                        "x": "160",
+                        "y": "179",
+                        "width": "36",
+                        "height": "36"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNShape",
+                  "attributes": {
+                    "id": "Task_1gyc8n3_di",
+                    "bpmnElement": "Task_1gyc8n3"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "dc:Bounds",
+                      "attributes": {
+                        "x": "296",
+                        "y": "157",
+                        "width": "100",
+                        "height": "80"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNEdge",
+                  "attributes": {
+                    "id": "SequenceFlow_1pt0rzs_di",
+                    "bpmnElement": "SequenceFlow_1pt0rzs"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "196",
+                        "y": "197"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "296",
+                        "y": "197"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNShape",
+                  "attributes": {
+                    "id": "Task_0zz8pid_di",
+                    "bpmnElement": "Task_0zz8pid"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "dc:Bounds",
+                      "attributes": {
+                        "x": "483",
+                        "y": "157",
+                        "width": "100",
+                        "height": "80"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNEdge",
+                  "attributes": {
+                    "id": "SequenceFlow_01h2v08_di",
+                    "bpmnElement": "SequenceFlow_01h2v08"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "396",
+                        "y": "197"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "483",
+                        "y": "197"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNShape",
+                  "attributes": {
+                    "id": "ExclusiveGateway_1y1ohkm_di",
+                    "bpmnElement": "ExclusiveGateway_1y1ohkm",
+                    "isMarkerVisible": "true"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "dc:Bounds",
+                      "attributes": {
+                        "x": "661",
+                        "y": "172",
+                        "width": "50",
+                        "height": "50"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNEdge",
+                  "attributes": {
+                    "id": "SequenceFlow_00s5egd_di",
+                    "bpmnElement": "SequenceFlow_00s5egd"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "583",
+                        "y": "197"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "661",
+                        "y": "197"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNShape",
+                  "attributes": {
+                    "id": "Task_0wqz650_di",
+                    "bpmnElement": "Task_0wqz650"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "dc:Bounds",
+                      "attributes": {
+                        "x": "636",
+                        "y": "250",
+                        "width": "100",
+                        "height": "80"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNEdge",
+                  "attributes": {
+                    "id": "SequenceFlow_0kkqa4e_di",
+                    "bpmnElement": "SequenceFlow_0kkqa4e"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "686",
+                        "y": "222"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "686",
+                        "y": "250"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "bpmndi:BPMNLabel",
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "dc:Bounds",
+                          "attributes": {
+                            "x": "684",
+                            "y": "229",
+                            "width": "27",
+                            "height": "14"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNEdge",
+                  "attributes": {
+                    "id": "SequenceFlow_0ge9jdu_di",
+                    "bpmnElement": "SequenceFlow_0ge9jdu"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "686",
+                        "y": "172"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "686",
+                        "y": "79"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "533",
+                        "y": "79"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "533",
+                        "y": "157"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "bpmndi:BPMNLabel",
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "dc:Bounds",
+                          "attributes": {
+                            "x": "582",
+                            "y": "43",
+                            "width": "63",
+                            "height": "27"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNShape",
+                  "attributes": {
+                    "id": "Task_1ohv9xq_di",
+                    "bpmnElement": "Task_1ohv9xq"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "dc:Bounds",
+                      "attributes": {
+                        "x": "636",
+                        "y": "369",
+                        "width": "100",
+                        "height": "80"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNShape",
+                  "attributes": {
+                    "id": "EndEvent_0ez0jja_di",
+                    "bpmnElement": "EndEvent_0ez0jja"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "dc:Bounds",
+                      "attributes": {
+                        "x": "668",
+                        "y": "500",
+                        "width": "36",
+                        "height": "36"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNEdge",
+                  "attributes": {
+                    "id": "SequenceFlow_1yvlg9n_di",
+                    "bpmnElement": "SequenceFlow_1yvlg9n"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "686",
+                        "y": "330"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "686",
+                        "y": "369"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "bpmndi:BPMNEdge",
+                  "attributes": {
+                    "id": "SequenceFlow_0osvvxp_di",
+                    "bpmnElement": "SequenceFlow_0osvvxp"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "686",
+                        "y": "449"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "di:waypoint",
+                      "attributes": {
+                        "x": "686",
+                        "y": "500"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
