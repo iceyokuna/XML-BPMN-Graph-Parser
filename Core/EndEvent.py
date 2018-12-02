@@ -1,5 +1,5 @@
 from Core.Event import *
-import IOtypes
+from Core.IOtypes import *
 
 class EndEvent(Event):
     def __init__(self , id, name, inputType , outputType):

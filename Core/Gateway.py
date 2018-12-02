@@ -1,5 +1,5 @@
 from Core.FlowObject import *
-import IOtypes
+from Core.IOtypes import *
 
 class Gateway(FlowObject):
     def __init__(self , id, name, inputType , outputType):

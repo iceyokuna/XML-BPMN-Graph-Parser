@@ -1,5 +1,5 @@
 from Core.CoreElement import *
-import IOtypes
+from Core.IOtypes import *
 
 class FlowObject(CoreElement):
     def __init__(self , id, name, inputType , outputType):

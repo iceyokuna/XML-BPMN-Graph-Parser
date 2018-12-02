@@ -1,5 +1,5 @@
 from Core.Gateway import *
-import IOtypes
+from Core.IOtypes import *
 
 class ExclusiveGateway(Gateway):
     def __init__(self , id, name, inputType , outputType):

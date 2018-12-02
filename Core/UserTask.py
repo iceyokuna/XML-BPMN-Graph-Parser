@@ -1,5 +1,5 @@
 from Core.Activity import *
-import IOtypes
+from Core.IOtypes import *
 
 class UserTask(Activity):
     def __init__(self , id, name, inputType , outputType):
