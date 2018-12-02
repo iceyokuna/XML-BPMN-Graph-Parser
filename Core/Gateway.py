@@ -2,15 +2,12 @@ from Core.FlowObject import *
 import IOtypes
 
 class Gateway(FlowObject):
-    def __init__(self , id, name):
-        super().__init__(id, name)
-        self.inputType = None
-        self.outputType = None
-        self.input = None
-        self.output = None
+    def __init__(self , id, name, inputType , outputType):
+        super().__init__(id, name, inputType , outputType)
+        self.flowReferenceList = []
 
-    def getInputType(self):
-        return self.inputType
+    def addFlow(self, flow):
+        self.flowReferenceList.append(flow)
 
-    def getOutputType(self):
-        return self.outputType
+    def getFlow(self):
+        return self.flowReferenceList
