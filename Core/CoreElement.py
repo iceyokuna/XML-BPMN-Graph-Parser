@@ -1,10 +1,4 @@
-from abc import ABC, abstractmethod
-
-class CoreElement(ABC):
+class CoreElement:
     def __init__(self, elementId, elementName):
         self.id = elementId
         self.name = elementName
-
-    @abstractmethod
-    def perform(self):
-        pass
