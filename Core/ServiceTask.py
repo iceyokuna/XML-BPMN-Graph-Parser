@@ -1,29 +1,21 @@
 from Core.Activity import *
 import IOtypes
 
-class ServiceTask(CoreElement):
-    def __init__(self , id, name):
-        super().__init__(id, name)
+class ServiceTask(Activity):
+    def __init__(self , id, name, inputType , outputType):
+        super().__init__(id, name, inputType , outputType)
         self.HTMLReference = None
-        self.inputType = None
-        self.outputType = None
-        self.input = None
-        self.output = None
+        self.serviceURL=  None
+
+    def setURL(self,url):
+        self.serviceURL = url
+    
+    def getURL(self):
+        return self.serviceURL
 
     def getHTML(self):
+        return self.HTMLReference
+
+    #perform service
+    def perform(self):
         pass
-
-    def getInputType(self):
-        return self.inputType
-
-    def getOutputType(self):
-        return self.outputType
-
-    def start(self,Input):
-        self.input = Input
-
-    def setOutput(self,output):
-        self.output = output
-    
-    def end(self):
-        return self.output

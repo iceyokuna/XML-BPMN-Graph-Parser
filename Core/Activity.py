@@ -2,15 +2,5 @@ from Core.FlowObject import *
 import IOtypes
 
 class Activity(FlowObject):
-    def __init__(self , id, name):
-        super().__init__(id, name)
-        self.inputType = None
-        self.outputType = None
-        self.input = None
-        self.output = None
-
-    def getInputType(self):
-        return self.inputType
-
-    def getOutputType(self):
-        return self.outputType
+    def __init__(self , id, name, inputType , outputType):
+        super().__init__(id, name, inputType , outputType)
