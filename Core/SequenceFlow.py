@@ -8,6 +8,7 @@ class SequenceFlow(ConnectingObject):
         self.conditionType = None
         self.conditionExpression = None
 
+    #return boolean check condition flow
     def checkFlow(self, Input):
-        return True
+        pass
 
