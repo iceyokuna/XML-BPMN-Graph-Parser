@@ -6,7 +6,7 @@ class ConnectingObject(CoreElement):
         self.sourceReference = None
         self.targetReference = None
 
-    def setScource(self, source):
+    def setSource(self, source):
         self.sourceReference = source
 
     def setTarget(self, target):

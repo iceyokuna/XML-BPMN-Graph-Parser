@@ -1,4 +1,5 @@
 from Core.ServiceTask import ServiceTask
+from Core.UserTask import UserTask
 from Core.StartEvent import StartEvent
 from Core.EndEvent import EndEvent
 from Core.ExclusiveGateway import ExclusiveGateway
@@ -9,10 +10,14 @@ class BPMNEngine:
     def __init__(self):
         self.startEvent = None
         self.elements = {}
+        self.currentExecution = None
+        self.countTask = 0
 
     def addStartEvent(self, Id, name):
         startEvent = StartEvent(Id, name, None, None)
+        self.startEvent = startEvent
         self.elements[Id] = startEvent
+        self.currentExecution = self.startEvent
 
     def addUserTask(self, Id, name, inputType, outputType):
         newUserTask = UserTask(Id, name, inputType, outputType)
@@ -34,13 +39,36 @@ class BPMNEngine:
         endEvent = EndEvent(Id, name, None, None)
         self.elements[Id] = endEvent
 
+    #connect Tasks, Gateways only still not support other coreElements
     def connect(self, sourceId, flowId, targetId):
-        pass
-
+        sequencialFlow = self.elements[flowId]
+        sourceElement = self.elements[sourceId]
+        targetElement = self.elements[targetId]
+        sequencialFlow.setSource(sourceElement)
+        sequencialFlow.setTarget(targetElement)
+        sourceElement.setFlowReference(sequencialFlow)
+        
     def start(self):
-        pass
+        print("startExecution")
+
+    def perform(self):
+        print(self.currentExecution)
 
     def next(self):
-        pass
+        connectedFlow = self.currentExecution.getFlowReference()
+        self.currentExecution = connectedFlow.getTarget()
+        
+
+if __name__ == "__main__":
+    bpmn = BPMNEngine()
+    bpmn.addStartEvent(1,'start')
+    bpmn.addUserTask(2,'task1',None,None)
+    bpmn.addServiceTask(3,'servicetask1',None,None)
+    bpmn.addSequenceFlow(4,'flow1')
+    bpmn.addSequenceFlow(5,'flow2')
+    bpmn.connect(1,4,2)
+    bpmn.connect(2,5,3)
 
 
+
+    
