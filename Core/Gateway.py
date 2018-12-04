@@ -6,8 +6,9 @@ class Gateway(FlowObject):
         super().__init__(id, name, inputType , outputType)
         self.flowReferenceList = []
 
-    def addFlow(self, flow):
+    def setFlowReference(self, flow):
         self.flowReferenceList.append(flow)
 
-    def getFlow(self):
-        return self.flowReferenceList
+    #Overiding 
+    def getFlowReference(self):
+        pass

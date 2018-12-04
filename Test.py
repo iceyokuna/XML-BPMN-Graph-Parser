@@ -44,19 +44,22 @@ class BPMNEngine:
         sequencialFlow = self.elements[flowId]
         sourceElement = self.elements[sourceId]
         targetElement = self.elements[targetId]
+        
         sequencialFlow.setSource(sourceElement)
         sequencialFlow.setTarget(targetElement)
+        
         sourceElement.setFlowReference(sequencialFlow)
         
     def start(self):
         print("startExecution")
 
-    def perform(self):
-        print(self.currentExecution)
-
     def next(self):
         connectedFlow = self.currentExecution.getFlowReference()
         self.currentExecution = connectedFlow.getTarget()
+
+    #to use input and call service
+    def perform(self):
+        print(self.currentExecution)
         
 
 if __name__ == "__main__":
@@ -70,5 +73,9 @@ if __name__ == "__main__":
     bpmn.connect(2,5,3)
 
 
+##>>> data = '{"researcher": {"name": "Ford Prefect","species": "Betelgeusian","relatives": [{"name": "Zaphod Beeblebrox","species": "Betelgeusian"}]}}'
+##>>> data  = json.loads(data)
+##>>> for i in data:
+##	print(data[i])
 
     

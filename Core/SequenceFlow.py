@@ -12,7 +12,11 @@ class SequenceFlow(ConnectingObject):
         self.conditionType = conditionTyes
         self.conditionExpression = condition
 
-    #return boolean check condition flow
-    def checkFlow(self, Input):
-        pass
+    def getCondition(self):
+        self.conditionExpression
 
+    #return boolean check condition flow
+    def checkCondition(self, Input):
+        if(Input == self.conditionExpression):
+            return True
+        return False
