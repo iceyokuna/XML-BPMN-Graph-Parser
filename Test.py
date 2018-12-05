@@ -67,10 +67,11 @@ if __name__ == "__main__":
     bpmn.addStartEvent(1,'start')
     bpmn.addUserTask(2,'task1',None,None)
     bpmn.addServiceTask(3,'servicetask1',None,None)
-    bpmn.addSequenceFlow(4,'flow1')
-    bpmn.addSequenceFlow(5,'flow2')
-    bpmn.connect(1,4,2)
-    bpmn.connect(2,5,3)
+    bpmn.addServiceTask(4,'servicetask2',None,None)
+    bpmn.addSequenceFlow(5,'flow1')
+    bpmn.addSequenceFlow(6,'flow2')
+    bpmn.addExclusiveGateway(7,'gateway',None,None)
+
 
 
 ##>>> data = '{"researcher": {"name": "Ford Prefect","species": "Betelgeusian","relatives": [{"name": "Zaphod Beeblebrox","species": "Betelgeusian"}]}}'
