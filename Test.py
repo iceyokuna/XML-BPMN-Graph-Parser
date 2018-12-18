@@ -65,7 +65,7 @@ class BPMNEngine:
 if __name__ == "__main__":
     bpmn = BPMNEngine()
     bpmn.addStartEvent(1,'start')
-    bpmn.addUserTask(2,'task1',None,None)
+    bpmn.addUserTask(2,'usertask1',None,None)
     bpmn.addSequenceFlow(5,'flow1')
     bpmn.addServiceTask(3,'servicetask1',None,None)
     bpmn.addServiceTask(4,'servicetask2',None,None)
