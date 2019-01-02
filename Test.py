@@ -71,6 +71,12 @@ if __name__ == "__main__":
     bpmn.addServiceTask(4,'servicetask2',None,None)
     bpmn.addSequenceFlow(6,'flow2')
     bpmn.addExclusiveGateway(7,'gateway',None,None)
+    bpmn.addSequenceFlow(8,'flow3')
+    bpmn.addSequenceFlow(9,'flow4')
+    bpmn.connect(1,5,2)
+    bpmn.connect(2,6,7)
+    bpmn.connect(7,8,3)
+    bpmn.connect(7,8,4)
 
 
 
